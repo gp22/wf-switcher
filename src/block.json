@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wazframe/wf-switcher",
+	"version": "0.1.0",
+	"title": "Layout",
+	"category": "design",
+	"icon": "smiley",
+	"description": "Every Layout components.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "wf-switcher",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"size": {
+			"type": "string",
+			"default": "default"
+		}
+	}
+}
