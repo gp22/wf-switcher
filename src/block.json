@@ -5,7 +5,7 @@
 	"version": "0.1.0",
 	"title": "Layout",
 	"category": "design",
-	"icon": "smiley",
+	"icon": "grid-view",
 	"description": "Every Layout components.",
 	"supports": {
 		"html": false
@@ -15,9 +15,17 @@
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"attributes": {
-		"size": {
+		"threshold": {
 			"type": "string",
-			"default": "default"
+			"default": "var(--measure)"
+		},
+		"space": {
+			"type": "string",
+			"default": "var(--space)"
+		},
+		"limit": {
+			"type": "number",
+			"default": 3
 		}
 	}
 }
