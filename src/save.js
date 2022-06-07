@@ -2,12 +2,13 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 export default function save ({ attributes }) {
 	const { limit, space, threshold } = attributes;
+	const adjustedLimit = Number(limit) + 1;
 	const styleProps = {
 		'--gap': space,
 		'--threshold': threshold
 	};
 
-	const css = `.switcher > :nth-last-child(n+${limit}), .switcher > :nth-last-child(n+${limit}) ~ * { flex-basis: 100%; }`;
+	const css = `.switcher > :nth-last-child(n+${adjustedLimit}), .switcher > :nth-last-child(n+${adjustedLimit}) ~ * { flex-basis: 100%; }`;
 
 	return (
 		<>
