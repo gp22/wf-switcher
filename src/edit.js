@@ -6,16 +6,15 @@ import {
 	__experimentalNumberControl as NumberControl
 } from '@wordpress/components';
 import namespace from './namespace';
-import setClassName from './setClassName';
 
 export default function Edit ({ attributes, setAttributes }) {
 	const { limit, space, threshold } = attributes;
-	let className = setClassName(attributes);
-
 	const styleProps = {
-		"--gap": space,
-		"--threshold": threshold
-	}
+		'--gap': space,
+		'--threshold': threshold
+	};
+
+	const css = `.switcher > :nth-last-child(n+${limit}), .switcher > :nth-last-child(n+${limit}) ~ * { flex-basis: 100%; }`;
 
 	return (
 		<>
@@ -23,21 +22,21 @@ export default function Edit ({ attributes, setAttributes }) {
 				<PanelBody>
 					<UnitControl
 						onChange={(value) => setAttributes({ space: value })}
-						label={ __( "Block gap", namespace ) }
+						label={__('Block gap', namespace)}
 						isUnitSelectTabbable
 						value={space}/>
 				</PanelBody>
 				<PanelBody>
 					<UnitControl
 						onChange={(value) => setAttributes({ threshold: value })}
-						label={ __( "Container breakpoint", namespace ) }
+						label={__('Container breakpoint', namespace)}
 						isUnitSelectTabbable
 						value={threshold}/>
 				</PanelBody>
 				<PanelBody>
 					<NumberControl
 						onChange={(value) => setAttributes({ limit: value })}
-						label={ __( "Max horizontal items", namespace ) }
+						label={__('Max horizontal items', namespace)}
 						isDragEnabled
 						isShiftStepEnabled
 						shiftStep={10}
@@ -46,8 +45,9 @@ export default function Edit ({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div className={"switcher"} style={ { ...styleProps } }>
-				<InnerBlocks />
+			<style>{css}</style>
+			<div className={'switcher'} style={{ ...styleProps }}>
+				<InnerBlocks/>
 			</div>
 		</>
 	);

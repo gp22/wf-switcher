@@ -9,11 +9,4 @@
 		/* ↓ Switch the layout at the --threshold */
 		flex-basis: calc((var(--threshold) - 100%) * 999);
 	}
-
-	> :nth-last-child(n+5),
-	> :nth-last-child(n+5) ~ * {
-		/* ↓ Switch to a vertical configuration if
-		there are more than 4 child elements */
-		flex-basis: 100%;
-	}
 }
