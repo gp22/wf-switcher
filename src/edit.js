@@ -12,10 +12,13 @@ export default function Edit ({ attributes, setAttributes }) {
 	const { limit, space, threshold } = attributes;
 	let className = setClassName(attributes);
 
+	const styleProps = {
+		"--gap": space,
+		"--threshold": threshold
+	}
+
 	return (
-		<div
-			{...useBlockProps({ className })}
-		>
+		<>
 			<InspectorControls>
 				<PanelBody>
 					<UnitControl
@@ -43,7 +46,9 @@ export default function Edit ({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<InnerBlocks/>
-		</div>
+			<div className={"switcher"} style={ { ...styleProps } }>
+				<InnerBlocks />
+			</div>
+		</>
 	);
 }

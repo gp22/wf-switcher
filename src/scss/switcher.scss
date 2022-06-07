@@ -1,9 +1,8 @@
 .switcher {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--space, 1.5rem);
+	gap: var(--gap);
 	/* ↓ The width at which the layout “breaks” */
-	--threshold: 30rem;
 
 	> * {
 		flex-grow: 1;

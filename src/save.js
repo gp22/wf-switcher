@@ -3,11 +3,17 @@ import setClassName from './setClassName';
 
 export default function save ({ attributes }) {
 	const className = setClassName(attributes);
+	const { limit, space, threshold } = attributes;
+	const styleProps = {
+		"--gap": space,
+		"--threshold": threshold
+	}
 
 	return (
-		<div {...useBlockProps.save({
-			className
-		})}>
+		<div
+			className={"switcher"}
+			style={ { ...styleProps } }
+		>
 			<InnerBlocks.Content/>
 		</div>
 	);

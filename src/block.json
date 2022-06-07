@@ -17,11 +17,11 @@
 	"attributes": {
 		"threshold": {
 			"type": "string",
-			"default": "var(--measure)"
+			"default": "30rem"
 		},
 		"space": {
 			"type": "string",
-			"default": "var(--space)"
+			"default": "1.5rem"
 		},
 		"limit": {
 			"type": "number",
